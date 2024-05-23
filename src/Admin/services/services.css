@@ -1,0 +1,21 @@
+.service-admin-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin: 40px;
+  border: 2px solid var(--skin-color);
+}
+
+.service-admin-heading {
+  font-size: 24px;
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+
+.service-admin-form {
+  border: 1px solid #ccc;
+  padding: 20px;
+  max-width: 400px;
+  width: 100%;
+}

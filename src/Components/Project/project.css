@@ -1,0 +1,23 @@
+.portfolio .portfolio-heading{
+    flex: 0 0 100%;
+    max-width: 100%;
+    text-align: right;
+}
+
+.portfolio .portfolio-heading a{
+    color: var(--text-black-900);
+    font-size: 20px;
+    font-weight: 400;
+}
+
+.portfolio .portfolio-item{
+    flex: 0 0 25%;
+    max-width: 25%;
+    margin-bottom: 30px;
+}
+
+@media (max-width: 991px) {
+    .portfolio .portfolio-heading a{
+      font-size: 16px;
+    }
+}

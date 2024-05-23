@@ -1,0 +1,162 @@
+.HeaderContainer {
+  position: fixed;
+  width: 100%;
+  height: 80px;
+  background-color: var(--bg-black-900);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0 20px;
+  color: var(--text-black-900);
+  font-weight: 600;
+  box-shadow: none;
+  transition: box-shadow 0.3s ease;
+  z-index: 200;
+}
+
+.shadow-header {
+  box-shadow: 0 0 20px rgba(48, 46, 77, 0.5);
+}
+
+.HeaderContent {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  max-width: 800px;
+}
+
+.HeaderLogo {
+  flex: 0 1 auto;
+  display: flex;
+  justify-content: center;
+}
+
+.HeaderLogo img {
+  height: 50px;
+}
+
+.Header-Left-Content,
+.Header-Right-Content {
+  display: flex;
+  align-items: center;
+}
+
+.HeaderLink {
+  position: relative;
+  cursor: pointer;
+}
+
+.HeaderLink:hover {
+  color: var(--skin-color);
+}
+
+.nav-link {
+  font-weight: 600;
+  display: block;
+  color: var(--text-black-900);
+  padding: 5px 15px;
+}
+
+.nav-link:hover {
+  color: var(--hover);
+}
+
+.nav-link.active {
+  color: var(--skin-color);
+}
+
+.HamburgerButton {
+  display: none;
+  cursor: pointer;
+}
+
+.DropdownMenu {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background-color: var(--bg-black-900);
+  border: 1px solid var(--border-color);
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  display: none;
+  flex-direction: column;
+  z-index: 100;
+}
+
+.HeaderLink:hover .DropdownMenu,
+.HeaderLink:focus .DropdownMenu {
+  display: flex;
+}
+
+.dropdown-item {
+  padding: 10px 15px;
+  color: var(--text-black-900);
+  white-space: nowrap;
+}
+
+.dropdown-item:hover {
+  color: var(--skin-color);
+}
+
+.MobileMenu {
+  display: none;
+  flex-direction: column;
+  align-items: center;
+  background-color: var(--bg-black-900);
+  position: absolute;
+  top: 80px;
+  left: 0;
+  width: 100%;
+  z-index: 1;
+}
+
+.MobileMenu.show {
+  display: flex;
+}
+
+.HeaderLink {
+  margin: 10px 0;
+}
+
+@media (max-width: 867px) {
+  .HeaderContent {
+    justify-content: space-between;
+  }
+
+  .Header-Left-Content,
+  .Header-Right-Content {
+    display: none;
+  }
+
+  .HeaderLogo {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    margin: 0;
+  }
+
+  .HamburgerButton {
+    display: block;
+    font-size: 24px;
+  }
+
+  .MobileMenu {
+    top: 60px; /* Adjusted to align correctly */
+  }
+  
+  .DropdownMenu {
+    position: relative;
+    top: 0;
+    left: 0;
+    box-shadow: none;
+    border: none;
+  }
+
+  .HeaderLink:hover .DropdownMenu,
+  .HeaderLink:focus .DropdownMenu {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    width: 100%;
+  }
+}

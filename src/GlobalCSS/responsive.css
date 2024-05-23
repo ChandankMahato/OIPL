@@ -1,0 +1,57 @@
+@media (max-width: 1199px) {
+    .aside{
+        left: -270px !important;
+    }
+    .main-content{
+        padding-left: 0 !important;
+    }
+}
+@media (max-width: 991px) {
+
+    .contact .contact-info-item
+    {
+        flex: 0 0 33.33% !important;
+        max-width: 33.33% !important;
+
+    }
+    .portfolio .portfolio-item,
+    .service .service-item{
+        flex: 0 0 50% !important;
+        max-width: 50% !important;
+    }
+
+    .home .home-info{
+        flex: 0 0 100% !important;
+        max-width: 100% !important;
+    }
+
+    .home .home-img{
+        display: none !important;
+    }
+}
+
+@media (max-width: 767px){
+    .contact .contact-form .col-6,
+    .portfolio .portfolio-item,
+    .service .service-item,{
+        flex: 0 0 100% !important;
+        max-width: 100% !important;
+    }
+    
+    .contact .contact-info-item{
+        flex: 0 0 50% !important;
+        max-width: 50% !important;
+    }
+} 
+
+@media (min-width: 767px){
+    .bloglist-container{
+        width: 70%;
+    }
+}
+
+@media (max-width: 767px){
+    .bloglist-container{
+        width: 100%;
+    }
+}
