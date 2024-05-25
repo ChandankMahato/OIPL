@@ -36,8 +36,8 @@ const CustomCarousel = ({ data }) => {
 
   return (
     <>
-     <div className="portfolio-item padd-15" key={data.id}>
-        <div className="portfolio-item-inner shadow-dark">
+     <div className="carousel-item" key={data.id}>
+        <div className="carousel-item-inner shadow-dark">
             <div>
               <div className={`carousel ${expanded ? 'expanded' : 'unexpanded'}`} onClick={() => setExpanded(true)}>
                 {expanded && data.length > 1 && (
@@ -45,18 +45,25 @@ const CustomCarousel = ({ data }) => {
                     &#8592;
                   </button>
                 )}
-                <img src={data[currentIndex].image} alt={data[currentIndex].title} />
+                {data.map((item, index) => (
+                  <img
+                    key={index}
+                    src={item.image}
+                    alt={item.title}
+                    className={currentIndex === index ? 'active' : ''}
+                  />
+                ))}
                 {expanded && data.length > 1 && (
                   <button className="next" onClick={handleNext}>
-                  &#8594;
+                    &#8594;
                   </button>
                 )}
               </div>
-                {expanded && (
-                  <span className="cross" onClick={() => setExpanded(false)}>
+              {expanded && (
+                <span className="cross" onClick={() => setExpanded(false)}>
                   X
-                  </span>
-                )}
+                </span>
+              )}
             </div>
         </div>
       </div>

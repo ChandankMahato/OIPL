@@ -11,7 +11,7 @@
   --hover: var(--skin-color);
 }
 
-body.dark{
+body.dark {
   --bg-black-900: #2f2f2f;
   --bg-black-100: #444343;
   --bg-black-50: #727272;
@@ -20,16 +20,23 @@ body.dark{
   --pure-white: #000000;
 }
 
-:root{
+:root {
   --skin-color: #1d9200;
+   --btn-hover: #176100;
 }
 
-:root{
+:root {
   --skin-color-1: #ec1839;
   --skin-color-2: #ff5100;
   --skin-color-3: #1d9200;
   --skin-color-4: #003c9d;
   --skin-color-5: #8f0064;
+
+  --btn-hover-1: #b50c25;
+  --btn-hover-2: #963102;
+  --btn-hover-3: #176100;
+  --btn-hover-4: #01235a;
+  --btn-hover-5: #510039;
 }
 
 body {
@@ -39,9 +46,9 @@ body {
 }
 
 @media (max-width: 991px) {
-    body{
-        font-size: 14px;
-    }
+  body {
+    font-size: 14px;
+  }
 }
 
 * {
@@ -56,4 +63,3 @@ body {
 ::after {
   box-sizing: border-box;
 }
-

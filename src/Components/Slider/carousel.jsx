@@ -4,7 +4,7 @@ import { db } from "../../Config/Firebase/config";
 import "./carousel.css";  // Import your carousel specific CSS
 
 const Carousel = () => {
-  const [carouselImages, setCarouselImages] = useState([]);
+  const [sliderImages, setSliderImages] = useState([]);
   const [currentIndex, setCurrentIndex] = useState(0);
 
   useEffect(() => {
@@ -16,7 +16,7 @@ const Carousel = () => {
           id: doc.id,
           ...doc.data()
         }));
-        setCarouselImages(images);
+        setSliderImages(images);
       } catch (error) {
         console.error("Error fetching carousel images: ", error);
       }
@@ -25,27 +25,27 @@ const Carousel = () => {
   }, []);
 
   useEffect(() => {
-    console.log(carouselImages);
+    console.log(sliderImages);
     const interval = setInterval(() => {
-      setCurrentIndex(prevIndex => (prevIndex + 1) % carouselImages.length);
+      setCurrentIndex(prevIndex => (prevIndex + 1) % sliderImages.length);
     }, 5000); // Change image every 3 seconds
 
     return () => clearInterval(interval);
-  }, [carouselImages]);
+  }, [sliderImages]);
 
-  if (carouselImages.length === 0) {
+  if (sliderImages.length === 0) {
     return <div>Loading...</div>;
   }
 
   return (
-    <div className="carousel">
-      {carouselImages.map((image, index) => (
+    <div className="slider">
+      {sliderImages.map((image, index) => (
         <div
           key={image.id}
-          className={`carousel-slide ${index === currentIndex ? 'active' : ''}`}
+          className={`slider-slide ${index === currentIndex ? 'active' : ''}`}
         >
           <img src={image.image} alt={image.title} />
-          <div className="carousel-caption">{image.title}</div>
+          <div className="slider-caption">{image.title}</div>
         </div>
       ))}
     </div>

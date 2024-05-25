@@ -17,10 +17,14 @@ import FacebookMsg from './Components/FacebookMsg/facebookMsg';
 import { collection, getDocs } from 'firebase/firestore';
 import { db } from './Config/Firebase/config';
 import Home from './Containers/Client/home';
-import Introduction from './Containers/Client/Introduction/introduction';
+import Introduction from './Containers/Client/introduction';
 import Mission from './Containers/Client/mission';
 import BoardOfDirector from './Containers/Client/BOD';
 import ManagementTeam from './Containers/Client/Management';
+import GalleryPage from './Containers/Client/Gallery';
+import ReportPage from './Containers/Client/Report';
+import CareerPage from './Containers/Client/Career';
+import Requests from './Admin/Career/request';
 
 function App() {
 
@@ -98,6 +102,18 @@ function App() {
               element={<ManagementTeam/>}
             />
             <Route 
+              path= "/gallery"
+              element={<GalleryPage/>}
+            />
+            <Route 
+              path= "/reports"
+              element={<ReportPage/>}
+            />
+            <Route 
+              path= "/career"
+              element={<CareerPage/>}
+            />
+            <Route 
               path ="/qej8hh8jeq"
               element={
                 <ProtectedRoute>
@@ -109,6 +125,14 @@ function App() {
               element={
                 <ProtectedRoute>
                   {<Messages/>}
+                </ProtectedRoute>
+              }
+            />
+            <Route 
+              path="/qej8hh8jeq/requests"
+              element={
+                <ProtectedRoute>
+                  {<Requests/>}
                 </ProtectedRoute>
               }
             />

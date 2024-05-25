@@ -11,11 +11,11 @@ const Footer = () => {
         <div className='columnContent'>
           <h2>Quick Links</h2>
           <ul>
-            <HashLink smooth to='/#about'><li>About</li></HashLink>
-            <HashLink smooth to='/#contact'><li>Contact</li></HashLink>
-            <HashLink smooth to='/#career'><li> <li>Career</li></li></HashLink>
-            <HashLink smooth to='/#gallery'><li>  <li>Gallery</li></li></HashLink>
-            <HashLink smooth to='/#reports'><li>Reports</li></HashLink>
+            <HashLink smooth to='/introduction' onClick={() => {window.scrollTo(0,0);}}><li>About</li></HashLink>
+            <HashLink smooth to='/#contact' onClick={() => {window.scrollTo(0,0);}}><li>Contact</li></HashLink>
+            <HashLink smooth to='/career' onClick={() => {window.scrollTo(0,0);}}><li> <li>Career</li></li></HashLink>
+            <HashLink smooth to='/gallery' onClick={() => {window.scrollTo(0,0);}}><li>  <li>Gallery</li></li></HashLink>
+            <HashLink smooth to='/reports' onClick={() => {window.scrollTo(0,0);}}><li>Reports</li></HashLink>
           </ul>
         </div>
       </div>
@@ -23,11 +23,11 @@ const Footer = () => {
         <div className='columnContent'>
           <h2>Useful Links</h2>
           <ul>
-            <a href='https://youtube.com' target='_blank' rel="noreferrer"><li>SEBON</li></a>
-            <a href='https://youtube.com' target='_blank' rel="noreferrer"><li>NEPSE</li></a>
-            <a href='https://youtube.com' target='_blank' rel="noreferrer"><li>CDSC</li></a>
-            <a href='https://youtube.com' target='_blank' rel="noreferrer"><li>MOF</li></a>
-            <a href='https://youtube.com' target='_blank' rel="noreferrer"><li>NRB</li></a>
+            <a href='https://www.sebon.gov.np/' target='_blank' rel="noreferrer"><li>SEBON</li></a>
+            <a href='https://www.nepalstock.com.np/' target='_blank' rel="noreferrer"><li>NEPSE</li></a>
+            <a href='https://cdsc.com.np/' target='_blank' rel="noreferrer"><li>CDSC</li></a>
+            <a href='https://www.mof.gov.np/' target='_blank' rel="noreferrer"><li>MOF</li></a>
+            <a href='https://www.nrb.org.np/' target='_blank' rel="noreferrer"><li>NRB</li></a>
           </ul>
         </div>
       </div>

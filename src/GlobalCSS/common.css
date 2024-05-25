@@ -8,12 +8,10 @@
   background-color: var(--bg-black-900);
   min-height: 100vh;
   display: flex;
-  padding: 64px;
+  padding-top: 64px;
+  padding-left: 64px;
+  padding-right: 64px;
   opacity: 1;
-}
-
-.section .container{
-    padding-top: 12px;
 }
 
 .section-title{
@@ -97,15 +95,12 @@
 }
 
 .btn:hover{
+    background: var(--btn-hover);
     transform: scale(1.05);
 }
 
 .shadow-dark{
     box-shadow: 0 0 20px rgba(48,46, 77,0.15);
-}
-
-.form-group {
-  margin-bottom: 10px;
 }
 
 label {

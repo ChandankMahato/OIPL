@@ -14,7 +14,7 @@ const ProjectAdmin = () => {
   const handleSubmit = async (event) => {
     event.preventDefault();
     if (title.trim() !== "" && file !== null && category.trim() !== "") {
-      const filesFolderRef = ref(storage, `projectFiles/${file.name}`);
+      const filesFolderRef = ref(storage, `galleryFiles/${file.name}`);
       try {
         const timestamp = serverTimestamp();
         await uploadBytes(filesFolderRef, file);

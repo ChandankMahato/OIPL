@@ -60,23 +60,19 @@ const Contact = () => {
             return toast.info('Captcha Not Verified');
         }
         try{
-            if(!user){
-                toast.info('Signin Required');
-            }else{
-                await addDoc(collection(db, `contacts`), {
-                    date: getCurrentDate(),
-                    userId: user?.uid,
-                    name,
-                    email,
-                    subject,
-                    message
-                })
-                toast.success("Message Sent Successfully");
-                setName("");
-                setEmail("");
-                setSubject("");
-                setMessage("");
-            }
+            await addDoc(collection(db, `contacts`), {
+                date: getCurrentDate(),
+                userId: user?.uid,
+                name,
+                email,
+                subject,
+                message
+            })
+            toast.success("Message Sent Successfully");
+            setName("");
+            setEmail("");
+            setSubject("");
+            setMessage("");
         }catch(error){
             toast.error("Could not Send Message, Check Your Network");
         }

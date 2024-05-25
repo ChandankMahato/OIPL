@@ -7,25 +7,25 @@ const contactData = [
     
     {
         id: 'contact1',
-        link: 'https://youtube.com/@santalumdesigns',
+        link: 'https://youtube.com/@ocimuminvestment',
         icon: youtube,
         title: 'Youtube'
     },
     {
         id: 'contact2',
-        link: 'https://facebook.com/santalumdesigns',
+        link: 'https://facebook.com/ocimuminvestment',
         icon: facebook,
         title: 'Facebook'
     },
     {
         id: 'contact5',
-        link: 'https://twitter.com/santalumdesigns',
+        link: 'https://x.com/ocimuminvestment',
         icon: twitter,
         title: 'Twitter'
     }, 
     {
         id: 'contact6',
-        link: 'https://instagram.com/santalumdesigns',
+        link: 'https://instagram.com/ocimuminvestment',
         icon: instagram,
         title: 'Instagram'
     },

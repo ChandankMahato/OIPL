@@ -1,8 +1,8 @@
 import React from "react";
-import Principle from "../../../Components/Principle/principle";
-import Contact from "../../../Components/Contact/contact";
-import Breadcrumb from "../../../Components/BreadCrumb/breadCrumb";
-import "./introduction.css";
+import Principle from "../../Components/Principle/principle";
+import Contact from "../../Components/Contact/contact";
+import Breadcrumb from "../../Components/BreadCrumb/breadCrumb";
+import "./style.css";
 const Introduction = () => {
   return (
     <>

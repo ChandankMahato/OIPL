@@ -1,16 +1,16 @@
-
-.portfolio-item-inner{
-    border: 6px solid var(--bg-black-100);
-    border-radius: 10px;
-    overflow: hidden;
-    cursor: pointer;
-    height: 200px;
-    align-items: center;
-    text-align: center;
+.carousel-item-inner {
+  border: 6px solid var(--bg-black-100);
+  border-radius: 10px;
+  overflow: hidden;
+  cursor: pointer;
+  height: 300px;
+  width: 250px;
+  align-items: center;
+  text-align: center;
 }
 
 .carousel.unexpanded {
-  height: 200px;
+  height: 300px;
   position: relative;
   overflow: hidden;
   cursor: pointer;
@@ -29,16 +29,29 @@
   z-index: 200;
 }
 
-.carousel.expanded img{
+.carousel img {
+  transition: opacity 1s ease-in-out;
+  position: absolute;
+  opacity: 0;
+}
+
+.carousel.unexpanded img {
+  width: 100%;
+  height: 300px;
+  object-fit: contain;
+  display: block;
+  transition: opacity 1s ease-in-out;
+}
+
+.carousel.expanded img {
+  transition: opacity 1s ease-in-out; 
   max-width: 90%;
   max-height: 90%;
 }
 
-.carousel.unexpanded img{
-  width: 100%;
-  height: 190px;
-  object-fit: contain;
-  display: block;
+
+.carousel img.active {
+  opacity: 1;
 }
 
 .prev,
@@ -63,7 +76,7 @@
   right: 5px;
 }
 
-.cross{
+.cross {
   position: fixed;
   top: 10px;
   right: 60px;
@@ -71,5 +84,5 @@
   font-weight: bolder;
   cursor: pointer;
   color: var(--skin-color);
-   z-index: 300;
+  z-index: 300;
 }

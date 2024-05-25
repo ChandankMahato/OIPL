@@ -1,49 +1,68 @@
 import React, { useState } from "react";
-import {ref, uploadBytes, getDownloadURL} from "firebase/storage";
-import { addDoc, collection } from "firebase/firestore";
+import { ref, uploadBytes, getDownloadURL } from "firebase/storage";
+import "./gallery.css";
+import { addDoc, collection, serverTimestamp } from "firebase/firestore";
 import { toast } from "react-toastify";
 import { handleImageChange } from "../../Utility/utils";
 import { db, storage } from "../../Config/Firebase/config";
-import "./feature.css";
 
-const FeaturedAdmin = () => {
+const ProjectAdmin = () => {
   const [title, setTitle] = useState("");
-  const [link, setLink] = useState("");
   const [file, setFile] = useState(null);
+  const [category, setCategory] = useState("");
 
   const handleSubmit = async (event) => {
     event.preventDefault();
-    if (title.trim() !== "" && file !== null) {
-      const filesFolderRef = ref(storage, `featuredFiles/${file.name}`);
+    if (title.trim() !== "" && file !== null && category.trim() !== "") {
+      const filesFolderRef = ref(storage, `galleryFiles/${file.name}`);
       try {
+        const timestamp = serverTimestamp();
         await uploadBytes(filesFolderRef, file);
         const downloadURL = await getDownloadURL(filesFolderRef);
-        await addDoc(collection(db, "featured"), {
+
+        // Reference the projects collection directly
+        const galleryRef = collection(db, "gallery");
+
+        // Add the project to Firestore with category
+        await addDoc(galleryRef, {
           title,
-          link,
           image: downloadURL,
-        })
+          createdAt: timestamp,
+          category,
+        });
+
         toast.success("Data uploaded successfully!");
-        setTitle('');
-        setLink('');
+        setTitle("");
         setFile(null);
+        setCategory("");
       } catch (error) {
+        console.log(error);
         toast.error("Something went wrong");
       }
     }
   };
-  
+
   const onImageChange = (event) => {
     handleImageChange(event, setFile);
   };
 
   return (
-    <div className="featured-admin-container">
-      <div className="featured-admin-heading">
-        <h3>Featured</h3>
+    <div className="gallery-admin-container">
+      <div className="gallery-admin-heading">
+        <h3>OIPL Gallery</h3>
       </div>
-      <div className="featured-admin-form">
+      <div className="gallery-admin-form">
         <form onSubmit={handleSubmit}>
+          <div className="form-group">
+            <label htmlFor="category">Category:</label>
+            <input
+              type="text"
+              id="category"
+              value={category}
+              onChange={(e) => setCategory(e.target.value)}
+              required
+            />
+          </div>
           <div className="form-group">
             <label htmlFor="title">Title:</label>
             <input
@@ -51,16 +70,6 @@ const FeaturedAdmin = () => {
               id="title"
               value={title}
               onChange={(e) => setTitle(e.target.value)}
-              required
-            />
-          </div>
-          <div className="form-group">
-            <label htmlFor="link">Link:</label>
-            <input
-              type="text"
-              id="link"
-              value={link}
-              onChange={(e) => setLink(e.target.value)}
               required
             />
           </div>
@@ -74,11 +83,13 @@ const FeaturedAdmin = () => {
               required
             />
           </div>
-          <button className="btn" type="submit">Submit</button>
+          <button className="btn" type="submit">
+            Submit
+          </button>
         </form>
       </div>
     </div>
   );
 };
 
-export default FeaturedAdmin;
+export default ProjectAdmin;

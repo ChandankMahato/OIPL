@@ -3,15 +3,22 @@ import "./theme.css";
 import ThemeIcons from './themeIcon';
 
 const Theme = ({day, changeMode}) => {
-   const [isSwitcherOpen, setSwitcherOpen] = useState(false);
-   var color1= "#ec1839";
-   var color2= "#ff5100";
-   var color3= "#1d9200";
-   var color4= "#003c9d";
-   var color5= "#8f0064";
+  const [isSwitcherOpen, setSwitcherOpen] = useState(false);
+  var color1= "#ec1839";
+  var color2= "#ff5100";
+  var color3= "#1d9200";
+  var color4= "#003c9d";
+  var color5= "#8f0064";
 
-   const changeColor = (param) => {
-    document.documentElement.style.setProperty("--skin-color", param);
+  var hover1= "#b50c25";
+  var hover2= "#963102";
+  var hover3= "#176100";
+  var hover4= "#01235a";
+  var hover5= "#510039";
+
+  const changeColor = (color, hover) => {
+    document.documentElement.style.setProperty("--skin-color", color);
+    document.documentElement.style.setProperty("--btn-hover", hover);
   };
 
   const toggleSkinColor = () => {
@@ -54,11 +61,11 @@ const Theme = ({day, changeMode}) => {
       </div>
       <h4>Theme Colors</h4>
       <div className="colors">
-        <span className="color-1" onClick={() => changeColor(color1)}></span>
-        <span className="color-2" onClick={() => changeColor(color2)}></span>
-        <span className="color-3" onClick={() => changeColor(color3)}></span>
-        <span className="color-4" onClick={() => changeColor(color4)}></span>
-        <span className="color-5" onClick={() => changeColor(color5)}></span>
+        <span className="color-1" onClick={() => changeColor(color1, hover1)}></span>
+        <span className="color-2" onClick={() => changeColor(color2, hover2)}></span>
+        <span className="color-3" onClick={() => changeColor(color3, hover3)}></span>
+        <span className="color-4" onClick={() => changeColor(color4, hover4)}></span>
+        <span className="color-5" onClick={() => changeColor(color5, hover5)}></span>
       </div>
     </div>
   );

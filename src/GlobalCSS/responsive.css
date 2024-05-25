@@ -8,7 +8,8 @@
 }
 @media (max-width: 991px) {
 
-    .contact .contact-info-item
+    .contact .contact-info-item,
+    .career .career-info-item
     {
         flex: 0 0 33.33% !important;
         max-width: 33.33% !important;
@@ -32,13 +33,15 @@
 
 @media (max-width: 767px){
     .contact .contact-form .col-6,
+    .career .career-form .col-6,
     .portfolio .portfolio-item,
-    .service .service-item,{
+    .service .service-item{
         flex: 0 0 100% !important;
         max-width: 100% !important;
     }
     
-    .contact .contact-info-item{
+    .contact .contact-info-item,
+    .career .career-info-item{
         flex: 0 0 50% !important;
         max-width: 50% !important;
     }

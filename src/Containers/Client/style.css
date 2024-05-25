@@ -1,0 +1,28 @@
+.introduction-text {
+  background-color: var(--bg-black-900);
+  color: var(--text-black-900);
+  padding: 64px;
+  line-height: 1.6;
+  font-size: 1.4rem;
+  text-align: justify;
+}
+
+.reportSection{
+  background-color: var(--bg-black-900);
+  padding-top: 64px;
+  padding-right: 64px;
+  padding-left: 64px;
+  padding-bottom: 16px;
+}
+
+.career-text {
+  background-color: var(--bg-black-900);
+  color: var(--text-black-900);
+  padding-left: 64px;
+  padding-right: 64px;
+  padding-top: 32px;
+ margin-bottom: -32px;
+  line-height: 1.6;
+  font-size: 1rem;
+  text-align: justify;
+}

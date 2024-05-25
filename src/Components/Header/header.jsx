@@ -21,7 +21,8 @@ const Header = ({day, changeMode}) => {
 
   const handleLinkClick = (link) => {
     setActiveLink(link);
-    setDropdownOpen(false); // Close dropdown when any link is clicked
+    setShowMenu(false);
+    window.scrollTo(0,0);
   };
 
   useEffect(() => {
@@ -50,7 +51,6 @@ const Header = ({day, changeMode}) => {
             onMouseLeave={() => setDropdownOpen(false)}
           >
             <HashLink
-              smooth to='/#about'
               className={activeLink === "about" ? 'nav-link active' : 'nav-link'}
               onClick={() => handleLinkClick('about')}
             >
@@ -67,7 +67,7 @@ const Header = ({day, changeMode}) => {
           </div>
           <div className="HeaderLink">
             <HashLink
-              smooth to='/#reports'
+              smooth to='/reports'
               className={activeLink === "report" ? 'nav-link active' : 'nav-link'}
               onClick={() => handleLinkClick('report')}
             >
@@ -96,7 +96,7 @@ const Header = ({day, changeMode}) => {
         <div className="Header-Right-Content">
           <div className="HeaderLink">
             <HashLink
-              smooth to='/#gallery'
+              smooth to='/gallery'
               className={activeLink === "gallery" ? 'nav-link active' : 'nav-link'}
               onClick={() => handleLinkClick('gallery')}
             >
@@ -105,7 +105,7 @@ const Header = ({day, changeMode}) => {
           </div>
           <div className="HeaderLink">
             <HashLink
-              smooth to='/#career'
+              smooth to='/career'
               className={activeLink === "career" ? 'nav-link active' : 'nav-link'}
               onClick={() => handleLinkClick('career')}
             >
@@ -129,7 +129,7 @@ const Header = ({day, changeMode}) => {
       <div className={`MobileMenu ${showMenu ? "show" : ""}`}>
         <div className="HeaderLink">
           <HashLink
-            smooth to='/#about'
+            smooth to=''
             className={activeLink === "about" ? 'nav-link active' : 'nav-link'}
             onClick={() => handleLinkClick('about')}
           >
@@ -144,7 +144,7 @@ const Header = ({day, changeMode}) => {
         </div>
         <div className="HeaderLink">
           <HashLink
-            smooth to='/#reports'
+            smooth to='/reports'
             className={activeLink === "report" ? 'nav-link active' : 'nav-link'}
             onClick={() => handleLinkClick('report')}
           >
@@ -162,7 +162,7 @@ const Header = ({day, changeMode}) => {
         </div>
         <div className="HeaderLink">
           <HashLink
-            smooth to='/#gallery'
+            smooth to='/gallery'
             className={activeLink === "gallery" ? 'nav-link active' : 'nav-link'}
             onClick={() => handleLinkClick('gallery')}
           >
@@ -171,7 +171,7 @@ const Header = ({day, changeMode}) => {
         </div>
         <div className="HeaderLink">
           <HashLink
-            smooth to='/#career'
+            smooth to='/career'
             className={activeLink === "career" ? 'nav-link active' : 'nav-link'}
             onClick={() => handleLinkClick('career')}
           >
