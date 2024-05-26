@@ -29,6 +29,11 @@
     .gallery-section-title h2{
     font-size: 25px;
     }
+    
+.gallery-section {
+  padding-left: 24px;
+  padding-right: 24px;
+}
 }
 
 .gallery-section-title h2::before{

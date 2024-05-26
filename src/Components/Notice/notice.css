@@ -27,7 +27,11 @@
 }
 @media (max-width: 767px) {
     .notice-section-title h2{
-    font-size: 25px;
+        font-size: 25px;
+    }
+    .notice-section {
+        padding-left: 24px;
+        padding-right: 24px;
     }
 }
 

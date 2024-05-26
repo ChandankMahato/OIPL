@@ -36,6 +36,11 @@
     .section-title h2{
     font-size: 25px;
     }
+    .section {
+      padding-left: 24px;
+      padding-right: 24px;
+    }
+
 }
 
 .section-title h2::before{

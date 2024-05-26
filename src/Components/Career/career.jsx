@@ -298,7 +298,7 @@ const Career = () => {
                             </div>
                         )}
                         <div className="row">
-                            <div className="recaptcha">
+                            <div className="recaptcha padd-15">
                                 <ReCAPTCHA
                                     sitekey={captcha.key}
                                     onChange={(value) => { setIsVerified(value) }}

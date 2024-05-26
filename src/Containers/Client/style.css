@@ -15,14 +15,32 @@
   padding-bottom: 16px;
 }
 
+
+
 .career-text {
   background-color: var(--bg-black-900);
   color: var(--text-black-900);
   padding-left: 64px;
   padding-right: 64px;
   padding-top: 32px;
- margin-bottom: -32px;
+  margin-bottom: -32px;
   line-height: 1.6;
   font-size: 1rem;
   text-align: justify;
+}
+
+
+@media (max-width: 767px) {
+  .introduction-text{
+    padding-left: 24px !important;
+    padding-right: 24px !important;
+  }
+  .reportSection {
+    padding-left: 24px !important;
+    padding-right: 24px !important;
+  }
+  .career-text {
+  padding-left: 32px;
+  padding-right: 32px;
+}
 }

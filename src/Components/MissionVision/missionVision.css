@@ -17,6 +17,16 @@
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
+@media (max-width: 767px){
+  .mv-section{
+    padding-left: 24px !important;
+    padding-right: 24px !important;
+  }
+  .card {
+    max-width: 500px !important;
+  }
+}
+
 .mission-vision-icon{
   margin-bottom: 8px;
 }

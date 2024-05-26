@@ -6,6 +6,13 @@
   justify-content: center;
 }
 
+@media (max-width: 767px){
+  .bod-section{
+    padding-left: 24px !important;
+    padding-right: 24px !important;
+  }
+}
+
 .bod-card {
   background-color: var(--bg-black-100);
   border-radius: 8px;
