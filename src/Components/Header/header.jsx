@@ -20,9 +20,11 @@ const Header = ({day, changeMode}) => {
   };
 
   const handleLinkClick = (link) => {
-    setActiveLink(link);
-    setShowMenu(false);
-    window.scrollTo(0,0);
+    if(link !== "about"){
+      setActiveLink(link);
+      setShowMenu(false);
+      window.scrollTo(0,0);
+    }
   };
 
   useEffect(() => {
