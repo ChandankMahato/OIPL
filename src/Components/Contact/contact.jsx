@@ -5,14 +5,10 @@ import { addDoc, collection } from "firebase/firestore";
 import { db } from "../../Config/Firebase/config";
 import { getCurrentDate } from "../../Utility/utils";
 import { toast } from "react-toastify";
-import { useUserAuth } from "../../context/userAuthContext";
 import  ReCAPTCHA  from "react-google-recaptcha"
 import captcha from "../../Config/captcha";
 
 const Contact = () => {
-
-    const {user} = useUserAuth();
-
     const [name, setName] = useState('');
     const [email, setEmail] = useState('');
     const [subject, setSubject] = useState('');
@@ -55,14 +51,12 @@ const Contact = () => {
         if (hasError) {
             return;
         }
-
         if(!isVerified){
             return toast.info('Captcha Not Verified');
         }
         try{
             await addDoc(collection(db, `contacts`), {
                 date: getCurrentDate(),
-                userId: user?.uid,
                 name,
                 email,
                 subject,
@@ -74,6 +68,7 @@ const Contact = () => {
             setSubject("");
             setMessage("");
         }catch(error){
+            console.log(error);
             toast.error("Could not Send Message, Check Your Network");
         }
     }
@@ -159,7 +154,7 @@ const Contact = () => {
                     </div>
                 </div>
                 <div className="row">
-                    <div className="recaptcha padd-15">
+                    <div className="recaptcha">
                         <ReCAPTCHA
                             sitekey={captcha.key}
                             onChange={(value) => {setIsVerified(value)}}

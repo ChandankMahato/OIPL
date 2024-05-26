@@ -4,13 +4,11 @@ import { addDoc, collection } from "firebase/firestore";
 import { db, storage } from "../../Config/Firebase/config";
 import { getCurrentDate } from "../../Utility/utils";
 import { toast } from "react-toastify";
-import { useUserAuth } from "../../context/userAuthContext";
 import ReCAPTCHA from "react-google-recaptcha";
 import captcha from "../../Config/captcha";
 import { getDownloadURL, ref, uploadBytesResumable } from "firebase/storage";
 
 const Career = () => {
-    const { user } = useUserAuth();
     const [name, setName] = useState('');
     const [email, setEmail] = useState('');
     const [gender, setGender] = useState('');
@@ -89,7 +87,7 @@ const Career = () => {
 
         setIsUploading(true);
 
-        const cvRef = ref(storage, `cvs/${user?.uid}/${cv.name}`);
+        const cvRef = ref(storage, `cvs/${cv.name}`);
         const uploadTask = uploadBytesResumable(cvRef, cv);
 
         uploadTask.on(
@@ -108,7 +106,6 @@ const Career = () => {
                 try {
                     await addDoc(collection(db, `careers`), {
                         date: getCurrentDate(),
-                        userId: user?.uid,
                         name,
                         email,
                         gender,
@@ -301,7 +298,7 @@ const Career = () => {
                             </div>
                         )}
                         <div className="row">
-                            <div className="recaptcha padd-15">
+                            <div className="recaptcha">
                                 <ReCAPTCHA
                                     sitekey={captcha.key}
                                     onChange={(value) => { setIsVerified(value) }}
