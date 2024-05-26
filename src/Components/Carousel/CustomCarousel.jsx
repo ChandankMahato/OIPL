@@ -1,39 +1,32 @@
 import React, { useState, useEffect } from 'react';
 import './CustomCarousel.css'; // Import your custom CSS for styling
 
-const CustomCarousel = ({ data }) => {
+const CustomCarousel = ({ data, path }) => {
   const [expanded, setExpanded] = useState(false);
   const [currentIndex, setCurrentIndex] = useState(0);
-
-  const toggleExpand = () => {
-    setExpanded(!expanded);
-  };
-
+console.log('hello');
   useEffect(() => {
+    console.log('hello123');
     let intervalId;
     if (!expanded) {
-      // Automatically advance the carousel when not expanded
       intervalId = setInterval(() => {
         setCurrentIndex((prevIndex) =>
           prevIndex === data.length - 1 ? 0 : prevIndex + 1
         );
-      }, 2000); // Change the interval as needed
+      }, 3000);
     }
     return () => clearInterval(intervalId);
   }, [expanded, data]);
-
   const handlePrev = () => {
     setCurrentIndex((prevIndex) =>
       prevIndex === 0 ? data.length - 1 : prevIndex - 1
     );
   };
-
   const handleNext = () => {
     setCurrentIndex((prevIndex) =>
       prevIndex === data.length - 1 ? 0 : prevIndex + 1
     );
   };
-
   return (
     <>
      <div className="carousel-item" key={data.id}>
@@ -66,9 +59,25 @@ const CustomCarousel = ({ data }) => {
               )}
             </div>
         </div>
+        {
+          path === "notice" ?  
+          <div className='notice-download-btn'>
+                <button
+                  className="download-button" 
+                  onClick={() => {
+                    window.open(data[0].pdfUrl, '_blank');
+                  }}
+                >
+                  Download Notice
+                </button>
+          </div> : ''
+        }
       </div>
     </>
   );
 };
 
 export default CustomCarousel;
+
+
+

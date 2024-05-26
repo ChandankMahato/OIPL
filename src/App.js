@@ -25,6 +25,7 @@ import GalleryPage from './Containers/Client/Gallery';
 import ReportPage from './Containers/Client/Report';
 import CareerPage from './Containers/Client/Career';
 import Requests from './Admin/Career/request';
+import NoticePage from './Containers/Client/Notice';
 
 function App() {
 
@@ -112,6 +113,10 @@ function App() {
             <Route 
               path= "/career"
               element={<CareerPage/>}
+            />
+            <Route 
+              path= "/notices"
+              element={<NoticePage/>}
             />
             <Route 
               path ="/qej8hh8jeq"

@@ -76,7 +76,7 @@ const Header = ({day, changeMode}) => {
           </div>
           <div className="HeaderLink">
             <HashLink
-              smooth to='/#notices'
+              smooth to='/notices'
               className={activeLink === "notice" ? 'nav-link active' : 'nav-link'}
               onClick={() => handleLinkClick('notice')}
             >
@@ -153,7 +153,7 @@ const Header = ({day, changeMode}) => {
         </div>
         <div className="HeaderLink">
           <HashLink
-            smooth to='/#notices'
+            smooth to='/notices'
             className={activeLink === "notice" ? 'nav-link active' : 'nav-link'}
             onClick={() => handleLinkClick('notice')}
           >

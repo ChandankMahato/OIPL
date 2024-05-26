@@ -1,4 +1,4 @@
-.projects-admin-container {
+.notice-admin-container {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -7,13 +7,13 @@
   border: 2px solid var(--skin-color);
 }
 
-.projects-admin-heading {
+.notice-admin-heading {
   font-size: 24px;
   font-weight: bold;
   margin-bottom: 20px;
 }
 
-.projects-admin-form {
+.notice-admin-form {
   border: 1px solid #ccc;
   padding: 20px;
   max-width: 400px;

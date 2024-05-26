@@ -6,7 +6,7 @@ import { toast } from "react-toastify";
 import { handleImageChange } from "../../Utility/utils";
 import { db, storage } from "../../Config/Firebase/config";
 
-const ProjectAdmin = () => {
+const GalleryAdmin = () => {
   const [title, setTitle] = useState("");
   const [file, setFile] = useState(null);
   const [category, setCategory] = useState("");
@@ -92,4 +92,4 @@ const ProjectAdmin = () => {
   );
 };
 
-export default ProjectAdmin;
+export default GalleryAdmin;

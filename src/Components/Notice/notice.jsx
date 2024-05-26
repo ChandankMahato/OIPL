@@ -1,21 +1,20 @@
 import React, { useEffect, useState } from "react";
-import "./gallery.css";
+import "./notice.css";
 import { collection, getDocs, orderBy, query } from "firebase/firestore";
 import { db } from "../../Config/Firebase/config";
 import { toast } from "react-toastify";
 import CustomCarousel from "../Carousel/CustomCarousel";
 
-const Gallery = () => {
+const Notice = () => {
   const [groupedData, setGroupedData] = useState([]);
 
   useEffect(() => {
-    console.log('hello');
-    const CACHE_KEY = "galleryCache";
+    const CACHE_KEY = "noticeCache";
     const CACHE_EXPIRATION = 7 * 24 * 60 * 60 * 1000;
-    const galleryCollectionRef = collection(db, "gallery");
-    const getGalleryList = async () => {
+    const noticeCollectionRef = collection(db, "notice");
+    const getNoticeList = async () => {
       try{
-        const q = query(galleryCollectionRef, orderBy("createdAt", "desc"));
+        const q = query(noticeCollectionRef, orderBy("createdAt", "desc"));
         const data  = await getDocs(q);
         const filteredData = data.docs.map((doc) => ({
           ...doc.data(),
@@ -53,24 +52,24 @@ const Gallery = () => {
         }, {});
         setGroupedData(Object.values(sortedData));
         } else {
-            getGalleryList();
+            getNoticeList();
         }
     } else {
-        getGalleryList();
+        getNoticeList();
     }
   }, []);
   
-  return (
-    <section className="gallery gallery-section" id="gallery">
-      <div className="gallery-container">
+   return (
+    <section className="notice notice-section" id="notice">
+      <div className="notice-container">
         <div>
-          <div className="gallery-section-title">
-            <h2>Gallery</h2>
+          <div className="notice-section-title">
+            <h2>Notices</h2>
           </div>
         </div>
-        <div className="gallery-row">
+        <div className="notice-row">
           {groupedData.map((group, index) => (
-                 <CustomCarousel data={group} path="gallery" />
+                  <CustomCarousel data={group} path="notice"/>
           ))}
         </div>
       </div>
@@ -78,4 +77,4 @@ const Gallery = () => {
   );
 };
 
-export default Gallery;
+export default Notice;
